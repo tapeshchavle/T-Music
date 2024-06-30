@@ -5,12 +5,22 @@ function App() {
   const [tracks, setTracks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [keyword, setKeyword] = useState("");
+  let arr = [
+    "tranding",
+    "top song",
+    "hindi song",
+    "mixup song",
+    "punjabi song",
+    "2024 song",
+    "best song",
+  ];
+  let song = Math.floor(Math.random() * arr.length);
 
   const getTracks = async () => {
     setIsLoading(true);
     let data = await fetch(
       `https://v1.nocodeapi.com/tapeshchavle12/spotify/qCDTnysEkRLMmvrm/search?q=${
-        keyword === "" ? "trending" : keyword
+        keyword === "" ? song : keyword
       }&type=track`
     );
     let convertedData = await data.json();
@@ -24,10 +34,10 @@ function App() {
 
   return (
     <>
-      <nav className="navbar navbar-dark navbar-expand-lg bg-dark">
+      <nav className="navbar navbar-dark navbar-expand-lg bg-dark fixed-top">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            Navbar
+            <span>M</span>usic Player
           </a>
 
           <div
@@ -50,7 +60,7 @@ function App() {
           </div>
         </div>
       </nav>
-      <div className="container">
+      <div className="container mt-5">
         <div className={`row ${isLoading ? "" : "d-none"}`}>
           <div className="col-12 py-5 text-center">
             <div
@@ -90,6 +100,14 @@ function App() {
               </div>
             );
           })}
+        </div>
+      </div>
+
+      <div className="card text-center">
+        <div className="card-body">
+          <h5 className="card-title">Spotify API</h5>
+          <p className="card-text">@copyrights</p>
+          <p className="card-title">Developed by Tapesh</p>
         </div>
       </div>
     </>
