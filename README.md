@@ -11,9 +11,11 @@ Interactive UI: Sleek and interactive user interface designed with Bootstrap and
 
 # User Interface
 
-  <h3>Laptop</h3>
+  <h3> On Laptop</h3>
   <img src="./src/assets/Laptop.png"></img>
-  <h3>Laptop</h3>
+  <br>
+  <hr>
+  <h3>On Mobile</h3>
   <img src="./src/assets/mobile.png"></img>
 
 # Technologies Used
