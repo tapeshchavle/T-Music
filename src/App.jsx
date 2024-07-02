@@ -19,7 +19,7 @@ function App() {
   const getTracks = async () => {
     setIsLoading(true);
     let data = await fetch(
-      `https://v1.nocodeapi.com/tapeshchavle12/spotify/qCDTnysEkRLMmvrm/search?q=${
+      `https://v1.nocodeapi.com/tapeshchavle/spotify/GNVcxgryXBxklRTb/search?q=${
         keyword === "" ? song : keyword
       }&type=track`
     );
